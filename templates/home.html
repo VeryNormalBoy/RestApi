@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+        <script src="/static/restapimain.js"></script>
+    </head>
+    <body>
+        <div>
+            <fieldset>
+                <form id = "form" action="/v1/bookings" methods = "POST">
+                    <input id = "in_mov" type="text", name = "moviename" placeholder = "movie">
+                    <br>
+                    <input id = "in_tick" type="text", name = "tickets" placeholder = "ticket">
+                    <br>
+                    <input type="submit" value = "book" >
+                </form>
+
+            </fieldset>
+        </div>
+    </body>
+</html>

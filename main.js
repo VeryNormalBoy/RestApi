@@ -1,15 +1,18 @@
 (doccument).ready(function(){
-  let formData{ 
-    "movienName": $('#in_mov').val();
-    "tickets": $('#in_tick').val();
+  const movie = $('#in_mov').val();
+  const tickets = $('#in_tick').val();
+  const form= $("#form");
+  const formData = {
+    "movieName": movie,
+    "tickets": tickets
   }
-    $('#form').submit(function(Event) {
+    $form.on("submit",function(Event) {
       event.preventDefault()
       $.ajax({
         type: "POST"
         url: "/v1/bookings"
-        data: JSON.stringify(formData)
+        data: formData
         dataType: 'json'
-      })
+      });
 
-    }
+    };

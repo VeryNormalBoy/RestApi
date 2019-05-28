@@ -23,6 +23,9 @@ class Show(ndb.Model):
     agerating = ndb.StringProperty()
     language = ndb.StringProperty()
 
+@app.route("/home", methods = ["GET", "POST"])
+def showhome():
+    return render_template("home.html")
 
 @app.route("/v1/bookings", methods = ["POST","GET"])
 def bookticket():
@@ -31,7 +34,8 @@ def bookticket():
     booking = Booking()
     booking.tickets = tickets
     booking.moviename = moviename
-    return render_template('home.html')
+    return jsonify({"tickets":booking.tickets, "moviename":
+    booking.moviename})
 
 # @app.route("/Tickets/<id>", methods = ["GET"])
 # def showtickets(id):
